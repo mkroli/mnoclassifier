@@ -1,0 +1,66 @@
+<!--
+MnoClassifier learns MSISDN-Operator combinations to afterwards predict Operators.
+Copyright (C) 2013 MACH Connectivity GmbH
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+-->
+<div ng-controller="ClassificationController"
+	ng-style="{'text-align': textAlign()}">
+	<div class="page-header" ng-hide="displayResults()">
+		<h1>MNO Classifier</h1>
+	</div>
+	<h2 ng-show="displayResults()">Classification</h2>
+
+	<form class="form-inline" ng-submit="classify()">
+		<div class="input-prepend input-append">
+			<span class="add-on">+</span><input placeholder="MSISDN" type="text"
+				ng-model="msisdn" pattern="\d{2,}" required autofocus></input>
+			<button type="submit" class="btn btn-primary">
+				<i
+					ng-class="{'icon-search': !isLoading, 'icon-refresh icon-spin': isLoading}"></i>
+				Classify
+			</button>
+		</div>
+	</form>
+
+	<div ng-show="displayResults()">
+		<div class="row">
+			<span class="span2">Confidence: {{confidenceString()}}</span>
+			<div class="span10 progress">
+				<div ng-class="'bar ' + confidenceClass()"
+					ng-style="{'width': confidenceString()}"></div>
+			</div>
+		</div>
+
+		<div>
+			<table class="table table-hover table-bordered">
+				<tr ng-repeat="operator in operatorPages[page]">
+					<td>{{operator.networkOperator}}</td>
+				</tr>
+			</table>
+			<div class="pagination pagination-centered">
+				<ul>
+					<li ng-class="{'disabled' : isPreviousEnabled()}"><a
+						ng-click="previousPage()" class="icon-double-angle-left"></a></li>
+					<li ng-repeat="page in operatorPages"
+						ng-class="{'active' : isActivePage($index)}"><a
+						ng-click="setPage($index)">{{$index + 1}}</a></li>
+					<li ng-class="{'disabled' : isNextEnabled()}"><a
+						ng-click="nextPage()" class="icon-double-angle-right"></a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

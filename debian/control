@@ -1,0 +1,15 @@
+Source: mnoclassifier
+Section: misc
+Priority: extra
+Maintainer: Michael Krolikowski <mkroli@yahoo.de>
+Build-Depends: debhelper (>= 7), wget, java-compiler, java6-sdk | java7-jdk
+Standards-Version: 3.7.3
+Homepage: http://github.com/mkroli/MnoClassifier
+
+Package: mnoclassifier
+Architecture: all
+Depends: java6-sdk
+Description: MnoClassifier learns MSISDN-Operator combinations to afterwards predict Operators.
+ MnoClassifier learns MSISDN-Operator combinations. It then can - given an MSISDN - guess the
+ according Operator. It does this by using a Naive Bayes classifier.
+ It provides an HTTP/Rest interface as well as an HTML/Javascript User interface.

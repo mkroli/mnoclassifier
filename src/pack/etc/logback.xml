@@ -1,0 +1,25 @@
+<configuration>
+	<jmxConfigurator />
+
+	<appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern><![CDATA[%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n]]></pattern>
+		</encoder>
+	</appender>
+
+	<appender name="file"
+		class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<file>${logdir:-/opt/mnoclassifier/log}/mnoclassifier.log</file>
+		<rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+			<fileNamePattern><![CDATA[${logdir:-/opt/mnoclassifier/log}/mnoclassifier.log.%d{yyyy-MM-dd}]]></fileNamePattern>
+			<maxHistory>30</maxHistory>
+		</rollingPolicy>
+		<encoder>
+			<pattern><![CDATA[%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%nopex%n]]></pattern>
+		</encoder>
+	</appender>
+
+	<root level="${loglevel:-warn}">
+		<appender-ref ref="${logto:-file}" />
+	</root>
+</configuration>

@@ -1,0 +1,48 @@
+<!--
+MnoClassifier learns MSISDN-Operator combinations to afterwards predict Operators.
+Copyright (C) 2013 MACH Connectivity GmbH
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+-->
+<h2>Training</h2>
+<div ng-controller="TrainingController">
+	<form class="form-inline" ng-submit="train()">
+		<div class="row" ng-repeat="sample in trainingSet"
+			style="margin-bottom: 10px">
+			<div class="span12">
+				<input type="text" ng-model="sample.networkOperator"
+					placeholder="MNO" required></input> <i class="icon-exchange"></i>
+				<div class="input-prepend">
+					<span class="add-on">+</span><input type="text"
+						ng-model="sample.telephoneNumber" placeholder="MSISDN"
+						pattern="\d+" required></input>
+				</div>
+				<a class="btn btn-danger" ng-click="removeSample(sample)"
+					ng-show="$index > 0"> <i class="icon-remove"></i>
+				</a>
+			</div>
+		</div>
+		<div class="row">
+			<div class="span12">
+				<button class="btn" ng-click="addSample()">
+					<i class="icon-plus"></i> Add
+				</button>
+				<button class="btn btn-primary" type="submit">
+					<i class="icon-wrench"></i> Train
+				</button>
+			</div>
+		</div>
+	</form>
+</div>

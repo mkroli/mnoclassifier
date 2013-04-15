@@ -1,0 +1,83 @@
+<!--
+MnoClassifier learns MSISDN-Operator combinations to afterwards predict Operators.
+Copyright (C) 2013 MACH Connectivity GmbH
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+-->
+<h2>Configuration</h2>
+<table class="table table-hover table-bordered"
+	ng-controller="ConfigController">
+	<thead>
+		<tr class="info">
+			<th>Section</th>
+			<th>Option</th>
+			<th>Value</th>
+		</tr>
+	</thead>
+	<tr>
+		<td rowspan="5" class="section">Classification</td>
+		<td class="option">Actors</td>
+		<td>{{config["classification.actors"]}}</td>
+	</tr>
+	<tr>
+		<td>Data File</td>
+		<td>{{config["classification.dataFile"]}}</td>
+	</tr>
+	<tr>
+		<td>Autosave Interval</td>
+		<td>{{config["classification.autosaveInterval"]}}</td>
+	</tr>
+	<tr>
+		<td>Self test - Samples</td>
+		<td>{{config["classification.selfTestSamples"]}}</td>
+	</tr>
+	<tr>
+		<td>Self test - Ratio</td>
+		<td>{{config["classification.selfTestRatio"]}}</td>
+	</tr>
+	<tr>
+		<td class="section">HTTP</td>
+		<td>Port</td>
+		<td>{{config["http.port"]}}</td>
+	</tr>
+	<tr>
+		<td rowspan="2" class="section">Operating System</td>
+		<td>name</td>
+		<td>{{config["os.name"]}}</td>
+	</tr>
+	<tr>
+		<td>arch</td>
+		<td>{{config["os.arch"]}}</td>
+	</tr>
+	<tr>
+		<td rowspan="2" class="section">Java</td>
+		<td>vm.name</td>
+		<td>{{config["java.vm.name"]}}</td>
+	</tr>
+	<tr>
+		<td>version</td>
+		<td>{{config["java.version"]}}</td>
+	</tr>
+	<tr>
+		<td class="section">User</td>
+		<td>name</td>
+		<td>{{config["user.name"]}}</td>
+	</tr>
+	<tr>
+		<td class="section">Logging</td>
+		<td>loglevel</td>
+		<td>{{config["loglevel"]}}</td>
+	</tr>
+</table>

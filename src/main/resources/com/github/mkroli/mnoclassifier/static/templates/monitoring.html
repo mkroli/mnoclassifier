@@ -1,0 +1,48 @@
+<!--
+MnoClassifier learns MSISDN-Operator combinations to afterwards predict Operators.
+Copyright (C) 2013 MACH Connectivity GmbH
+
+This program is free software; you can redistribute it and/or
+modify it under the terms of the GNU General Public License
+as published by the Free Software Foundation; either version 2
+of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; if not, write to the Free Software
+Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+-->
+<div ng-controller="MonitoringController">
+	<h2>Monitoring</h2>
+	<table class="table table-hover table-bordered">
+		<thead>
+			<tr class="info">
+				<th>Name</th>
+				<th>Value</th>
+			</tr>
+		</thead>
+		<tr ng-repeat="metric in metrics">
+			<td>{{metric.name}}</td>
+			<td>{{metric.value}}</td>
+		</tr>
+	</table>
+
+	<h3>Memory Usage</h3>
+	<canvas id="java.memory.heap.used" width="940" height="250">No canvas support</canvas>
+
+	<h3>Training samples</h3>
+	<canvas id="classification.samples" width="940" height="250">No canvas support</canvas>
+
+	<h3>Classifications</h3>
+	<canvas id="classification.classifications" width="940" height="250">No canvas support</canvas>
+
+	<h3>Successrate</h3>
+	<canvas id="classification.successRate" width="940" height="250">No canvas support</canvas>
+
+	<h3>Successrate</h3>
+	<canvas id="classification.latestHits.meter" width="600" height="250">No canvas support</canvas>
+</div>
