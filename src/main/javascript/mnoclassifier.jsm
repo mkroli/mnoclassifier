@@ -22,10 +22,14 @@ http://sugarjs.com/download
 http://code.angularjs.org/1.0.6/angular.min.js
 http://code.angularjs.org/1.0.6/angular-resource.min.js
 
-# RGraph
-http://javascript.www.rgraph.net/libraries/combined.html/RGraph.common.core.js
-http://javascript.www.rgraph.net/libraries/combined.html/RGraph.line.js
-http://javascript.www.rgraph.net/libraries/combined.html/RGraph.meter.js
+# jQuery
+http://code.jquery.com/jquery-1.9.1.min.js
+
+# Raphaël
+https://raw.github.com/DmitryBaranovskiy/raphael/master/raphael.js
+
+# Morris.js
+https://raw.github.com/oesmith/morris.js/0.4.2/morris.js
 
 mnoclassifier/app.coffee
 mnoclassifier/classification.coffee
