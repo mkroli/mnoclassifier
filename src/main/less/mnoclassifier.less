@@ -21,8 +21,16 @@
 @import "mnoclassifier/font-awesome.css";
 @import "mnoclassifier/morris.core.less";
 
-body {
-	margin-top: 40px;
+@media (min-width : 980px) {
+	body {
+		margin-top: 40px;
+	}
+}
+
+@media (max-width : 980px) {
+	body {
+		margin-top: 0;
+	}
 }
 
 .navbar {
@@ -38,3 +46,5 @@ body {
 .graph {
 	height: 250px;
 }
+
+@import "mnoclassifier/bootstrap-responsive.css";

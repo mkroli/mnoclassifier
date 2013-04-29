@@ -29,14 +29,20 @@ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
 <body ng-app="mnoclassifier" ng-controller="NavigationController">
 	<div class="navbar navbar-fixed-top">
 		<div class="navbar-inner">
-			<a class="brand" href="/">MNO Classifier</a>
-			<ul class="nav">
-				<li class="divider-vertical"></li>
-				<li ng-repeat="menuItem in menuItems"
-					ng-class="{'active' : menuItem.active()}"><a
-					ng-click="redirect(menuItem.url)"><i class="icon-large"
-						ng-class="menuItem.icon"></i> {{menuItem.name}}</a></li>
-			</ul>
+			<a class="btn btn-navbar" data-toggle="collapse"
+				data-target=".nav-collapse"> <span class="icon-bar"></span> <span
+				class="icon-bar"></span> <span class="icon-bar"></span>
+			</a> <a class="brand" href="/">MNO Classifier</a>
+
+			<div class="nav-collapse collapse">
+				<ul class="nav">
+					<li class="divider-vertical"></li>
+					<li ng-repeat="menuItem in menuItems"
+						ng-class="{'active' : menuItem.active()}"><a
+						ng-click="redirect(menuItem.url)"><i class="icon-large"
+							ng-class="menuItem.icon"></i> {{menuItem.name}}</a></li>
+				</ul>
+			</div>
 		</div>
 	</div>
 

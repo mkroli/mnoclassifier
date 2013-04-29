@@ -31,6 +31,9 @@ https://raw.github.com/DmitryBaranovskiy/raphael/master/raphael.js
 # Morris.js
 https://raw.github.com/oesmith/morris.js/0.4.2/morris.js
 
+# Bootstrap
+http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.js
+
 mnoclassifier/app.coffee
 mnoclassifier/classification.coffee
 mnoclassifier/training.coffee
