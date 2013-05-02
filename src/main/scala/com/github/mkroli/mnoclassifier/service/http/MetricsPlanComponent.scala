@@ -25,7 +25,9 @@ import scala.language.postfixOps
 import org.json4s.DefaultFormats
 import org.json4s.JObject
 import org.json4s.JString
-import org.json4s.JsonDSL._
+import org.json4s.JsonDSL.long2jvalue
+import org.json4s.JsonDSL.pair2Assoc
+import org.json4s.JsonDSL.string2jvalue
 import org.json4s.native.Serialization
 
 import com.github.mkroli.mnoclassifier.service.AkkaComponent
@@ -60,13 +62,10 @@ trait MetricsPlanComponent extends MetricsHelper {
 
   private def metricsHistoryToJson(history: Map[String, GenSeq[Option[(Long, Option[Any])]]]) = {
     Serialization.write(history.map {
-      case (name, history) =>
-        val (dates, values) = history.map {
-          case Some((date, value)) => date -> value
-          case None => 0L -> None
-        }.unzip
-        name -> (("dates" -> dates.toList) ~
-          ("values" -> values.map(metricValueToJsonValue).toList))
+      case (name, history) => name -> (history.flatMap {
+        case Some((date, value)) => Some(("date" -> date) ~ ("value" -> metricValueToJsonValue(value)))
+        case _ => None
+      })
     })(DefaultFormats)
   }
 

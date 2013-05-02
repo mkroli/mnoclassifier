@@ -65,7 +65,7 @@ window.MonitoringController = ($scope, Monitoring, MonitoringPush) ->
 			'classification.successRate'
 		]
 			data = $scope.metricsHistory[name]
-			data ?= dates: [new Date().getTime()], values: [0]
+			data ?= [date: new Date().getTime(), value: 0]
 			charts[name] ?= Morris.Line
 				element: name
 				data: []
@@ -73,10 +73,7 @@ window.MonitoringController = ($scope, Monitoring, MonitoringPush) ->
 				ykeys: ['value']
 				labels: [name]
 				hideHover: 'auto'
-			charts[name].setData(
-				(data.dates.zip data.values).map (v) ->
-					date: v[0], value: v[1]
-				.filter (o) -> o.date > 0)
+			charts[name].setData data
 
 	MonitoringPush.onMetrics = (metrics) -> $scope.metrics = metrics
 
