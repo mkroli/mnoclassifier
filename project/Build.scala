@@ -32,17 +32,16 @@ object Build extends sbt.Build {
 
   lazy val projectDependencies = Seq(
     libraryDependencies ++= Seq(
-      "com.typesafe" % "config" % "1.0.0",
-      "com.twitter" %% "chill" % "0.2.0",
-      "org.json4s" %% "json4s-native" % "3.1.0",
-      "com.jsuereth" %% "scala-arm" % "1.2",
-      "javax.transaction" % "jta" % "1.1",
+      "com.typesafe" % "config" % "1.0.1",
+      "com.twitter" %% "chill" % "0.2.3",
+      "org.json4s" %% "json4s-native" % "3.2.4",
+      "com.jsuereth" %% "scala-arm" % "1.3",
       "nl.grons" %% "metrics-scala" % "2.2.0",
-      "ch.qos.logback" % "logback-classic" % "1.0.9",
-      "com.typesafe.akka" %% "akka-actor" % "2.1.0",
-      "net.databinder" %% "unfiltered-netty" % "0.6.7",
-      "net.databinder" %% "unfiltered-netty-server" % "0.6.7",
-      "net.databinder" %% "unfiltered-netty-websockets" % "0.6.7"))
+      "ch.qos.logback" % "logback-classic" % "1.0.13",
+      "com.typesafe.akka" %% "akka-actor" % "2.1.4",
+      "net.databinder" %% "unfiltered-netty" % "0.6.8",
+      "net.databinder" %% "unfiltered-netty-server" % "0.6.8",
+      "net.databinder" %% "unfiltered-netty-websockets" % "0.6.8"))
 
   lazy val projectClasspath = Seq(
     unmanagedSourceDirectories in Compile <++= baseDirectory { base =>

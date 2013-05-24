@@ -19,20 +19,21 @@
 http://sugarjs.com/download
 
 # AngularJS
-http://code.angularjs.org/1.0.6/angular.min.js
-http://code.angularjs.org/1.0.6/angular-resource.min.js
+http://code.angularjs.org/1.0.7/angular.min.js
+http://code.angularjs.org/1.0.7/angular-resource.min.js
 
 # jQuery
-http://code.jquery.com/jquery-1.9.1.min.js
+http://code.jquery.com/jquery-2.0.1.min.js
 
 # Raphaël
 https://raw.github.com/DmitryBaranovskiy/raphael/master/raphael.js
 
 # Morris.js
-https://raw.github.com/oesmith/morris.js/0.4.2/morris.js
+https://raw.github.com/oesmith/morris.js/0.4.3/morris.js
 
 # Bootstrap
-http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/2.3.1/js/bootstrap.js
+https://github.com/twitter/bootstrap/raw/v2.3.2/js/bootstrap-transition.js
+https://github.com/twitter/bootstrap/raw/v2.3.2/js/bootstrap-collapse.js
 
 mnoclassifier/app.coffee
 mnoclassifier/classification.coffee

@@ -16,9 +16,9 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
  */
-addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.1.0")
+addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.2.0")
 
-addSbtPlugin("org.xerial.sbt" % "sbt-pack" % "0.1.9")
+addSbtPlugin("org.xerial.sbt" % "sbt-pack" % "0.2")
 
 addSbtPlugin("com.untyped" %% "sbt-js" % "0.5")
 
