@@ -18,6 +18,10 @@
  */
 import sbt._
 import sbt.Keys._
+import sbtrelease._
+import sbtrelease.ReleasePlugin._
+import sbtrelease.ReleasePlugin.ReleaseKeys._
+import sbtrelease.ReleaseStateTransformations._
 import xerial.sbt.Pack._
 import com.untyped.sbtjs.Plugin._
 import com.untyped.sbtless.Plugin._
@@ -26,7 +30,6 @@ object Build extends sbt.Build {
   lazy val projectSettings = Seq(
     name := "mnoclassifier",
     organization := "com.github.mkroli",
-    version := "0.1-SNAPSHOT",
     scalaVersion := "2.10.1",
     scalacOptions ++= Seq("-feature", "-unchecked"))
 
@@ -101,6 +104,17 @@ object Build extends sbt.Build {
         </license>
       </licenses>)
 
+  lazy val projectReleaseSettings = Seq(
+    releaseProcess := Seq[ReleaseStep](
+      checkSnapshotDependencies,
+      inquireVersions,
+      runTest,
+      setReleaseVersion,
+      commitReleaseVersion,
+      tagRelease,
+      setNextVersion,
+      commitNextVersion))
+
   lazy val mnoclassifier = Project(
     id = "mnoclassifier",
     base = file("."),
@@ -114,5 +128,7 @@ object Build extends sbt.Build {
       projectJsSettings ++
       lessSettings ++
       projectLessSettings ++
-      projectPomSettings)
+      projectPomSettings ++
+      releaseSettings ++
+      projectReleaseSettings)
 }
